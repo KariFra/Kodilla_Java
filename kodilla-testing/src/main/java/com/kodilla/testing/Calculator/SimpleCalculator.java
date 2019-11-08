@@ -5,7 +5,7 @@ public class SimpleCalculator {
     int a;
     int b;
 
-    public SimpleCalculator(int a, int b){
+    public SimpleCalculator(){
         this.a = a;
         this.b = b;
     }
@@ -16,10 +16,10 @@ public class SimpleCalculator {
         return b;
     }
 
-    public int add (){
+    public int add (int a, int b){
         return a + b;
     }
-    public int substract (){
+    public int substract (int a, int b){
         return a - b;
     }
 }
