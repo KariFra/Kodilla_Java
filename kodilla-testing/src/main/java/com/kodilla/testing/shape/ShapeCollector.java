@@ -5,17 +5,28 @@ import java.util.*;
 
 public class ShapeCollector {
 
+//    Circle circle = new Circle("circle", 10.00);
+//    Triangle triangle = new Triangle("triangle", 20.00);
+//    Square square = new Square("square", 30.00);
 
-    private ArrayList<Shape> shapes = new ArrayList<>();
+
+        ArrayList<Shape> shape = new ArrayList<>();
 
 
-    public void addFigure(Shape shape){}
 
-    public void removeFigure(Shape shape){}
+        ArrayList<Shape> addFigure ( Shape shape){
+        }
 
-    public int getFigure(int n){
-        return 2;
-    }
+        public boolean removeFigure ( Shape shape){
+        }
 
-    public void showFigures(){};
+        public int getFigure ( int n){
+            return 2;
+        }
+
+        public void showFigures ( ) {
+        }
+        ;
+
+
 }

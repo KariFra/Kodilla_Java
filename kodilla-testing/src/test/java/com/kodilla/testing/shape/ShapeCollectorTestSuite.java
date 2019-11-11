@@ -23,17 +23,42 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure(){
         //Given
-        Triangle triangle = new Triangle("Triangle",12.00);
+        Shape shape = new Shape("Triangle",12.00);
         ShapeCollector collectedShape = new ShapeCollector();
-        ArrayList<Shape> shapes = new ArrayList<>();
 
         //When
-        collectedShape.addFigure(triangle);
+        ArrayList<Shape> result = collectedShape.addFigure(shape);
 
         //Then
-        Assert.assertEquals(1,shapes.size());
+        Assert.assertEquals(1,result.size());
     }
+    @Test
+    public void testRemoveFigure(){
+        //Given
+        Triangle triangle = new Triangle("Triangle",12.00);
+        ShapeCollector collectedShape = new ShapeCollector();
+        ArrayList<Shape> shape = new ArrayList<>();
+        shape.add(triangle);
 
+        //When
+        boolean result = collectedShape.removeFigure(triangle);
+
+        //Then
+        Assert.assertTrue(result);
+    }
+    @Test
+    public int TestGetFigure(){
+        //Given
+        Triangle triangle = new Triangle("Triangle",12.00);
+        ShapeCollector collectedShape = new ShapeCollector();
+        collectedShape.addFigure(triangle);
+
+        //When
+        boolean result = collectedShape.removeFigure(triangle);
+
+        //Then
+        Assert.assertTrue(result);
+    }
 
 
 
