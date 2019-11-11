@@ -1,32 +1,44 @@
 package com.kodilla.testing.shape;
 
+import com.sun.org.apache.xalan.internal.xsltc.dom.ArrayNodeListIterator;
+
 import java.util.*;
 
 
 public class ShapeCollector {
 
-//    Circle circle = new Circle("circle", 10.00);
-//    Triangle triangle = new Triangle("triangle", 20.00);
-//    Square square = new Square("square", 30.00);
+
+    ArrayList<Shape> shapes = new ArrayList<>();
 
 
-        ArrayList<Shape> shape = new ArrayList<>();
-
-
-
-        ArrayList<Shape> addFigure ( Shape shape){
+        ArrayList<Shape> addFigure (Shape shape){
+            shapes.add(shape);
+            return shapes;
         }
 
         public boolean removeFigure ( Shape shape){
+        boolean result = false;
+            if (shapes.contains(shape)) {
+                shapes.remove(shape);
+            }
+        return true;
         }
 
-        public int getFigure ( int n){
-            return 2;
+        public Shape getFigure (int n){
+            Shape shape = null;
+            if (n >= 0 && n < shapes.size()){
+                shape = shapes.get(n);
+            }
+            return shape;
         }
 
-        public void showFigures ( ) {
+        public String showFigures (Shape shape) {
+           String result = shape.getShapeName();
+           return result;
         }
-        ;
+
+
+
 
 
 }

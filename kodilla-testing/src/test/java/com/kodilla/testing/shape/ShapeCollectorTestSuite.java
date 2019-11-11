@@ -16,18 +16,18 @@ public class ShapeCollectorTestSuite {
     }
 
     @AfterClass
-    public void afterAllSuit(){
+    public static void afterAllSuit(){
         System.out.println("All tests have been executed.");
     }
 
     @Test
     public void testAddFigure(){
         //Given
-        Shape shape = new Shape("Triangle",12.00);
+        Shape circle = new Circle("circle", 20.00);
         ShapeCollector collectedShape = new ShapeCollector();
 
         //When
-        ArrayList<Shape> result = collectedShape.addFigure(shape);
+        ArrayList<Shape> result = collectedShape.addFigure(circle);
 
         //Then
         Assert.assertEquals(1,result.size());
@@ -35,29 +35,33 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure(){
         //Given
-        Triangle triangle = new Triangle("Triangle",12.00);
+        Shape circle = new Circle("circle", 20.00);
+        ArrayList<Shape> shapes = new ArrayList<>();
+        shapes.add(circle);
         ShapeCollector collectedShape = new ShapeCollector();
-        ArrayList<Shape> shape = new ArrayList<>();
-        shape.add(triangle);
 
         //When
-        boolean result = collectedShape.removeFigure(triangle);
+        boolean result = collectedShape.removeFigure(circle);
 
         //Then
         Assert.assertTrue(result);
     }
     @Test
-    public int TestGetFigure(){
+    public void TestGetFigure(){
         //Given
-        Triangle triangle = new Triangle("Triangle",12.00);
+        Shape circle = new Circle("circle", 20.00);
+        Shape triangle = new Triangle("triangle", 10.00);
+        ArrayList<Shape> shapes = new ArrayList<>();
+        shapes.add(circle);
+        shapes.add(triangle);
         ShapeCollector collectedShape = new ShapeCollector();
-        collectedShape.addFigure(triangle);
 
         //When
-        boolean result = collectedShape.removeFigure(triangle);
+        Shape result = collectedShape.shapes.get(0);
+
 
         //Then
-        Assert.assertTrue(result);
+        Assert.assertEquals(circle,result);
     }
 
 
