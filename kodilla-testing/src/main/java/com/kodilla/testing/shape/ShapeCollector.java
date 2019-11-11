@@ -20,8 +20,9 @@ public class ShapeCollector {
         boolean result = false;
             if (shapes.contains(shape)) {
                 shapes.remove(shape);
+                return true;
             }
-            return true;
+
         }
 
         public Shape getFigure (int n){
