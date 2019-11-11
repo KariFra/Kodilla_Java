@@ -14,23 +14,31 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList(){
         //Given
          ArrayList<Integer> numbers = new  ArrayList<>();
-         ArrayList<Integer> evenNumbers = new  ArrayList<>();
+         OddNumbersExterminator exterminator = new OddNumbersExterminator();
+
         //When
-        numbers.clear();
+        ArrayList<Integer> result = exterminator.exterminate(numbers);
+
         //Then
-        Assert.assertTrue(evenNumbers.isEmpty());
+        Assert.assertTrue(result.isEmpty());
         System.out.println("Test OddNumbersExterminatorEmptyList completed ");
     }
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
         ArrayList<Integer> numbers = new  ArrayList<>();
-        ArrayList<Integer> evenNumbers = new  ArrayList<>();
-        //When
-        numbers.add(22);
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
         numbers.add(31);
+        numbers.add(22);
+
+        //When musi sie znalezc wywolanie testowanej metody
+        ArrayList<Integer> result = exterminator.exterminate(numbers);
+
         //Than
-        Assert.assertFalse(evenNumbers.contains(31) && !evenNumbers.contains(22));
+//        Assert.assertFalse(result.contains(31));
+        ArrayList<Integer> expected = new  ArrayList<>();
+        expected.add(22);
+        Assert.assertEquals(expected,result);
         System.out.println("Test OddNumbersExterminatorNormalList completed ");
     }
 
