@@ -24,9 +24,14 @@ public class ShapeCollectorTestSuite {
     public void testAddFigure(){
         //Given
         Triangle triangle = new Triangle("Triangle",12.00);
-
+        ShapeCollector collectedShape = new ShapeCollector();
+        ArrayList<Shape> shapes = new ArrayList<>();
 
         //When
+        collectedShape.addFigure(triangle);
+
+        //Then
+        Assert.assertEquals(1,shapes.size());
     }
 
 

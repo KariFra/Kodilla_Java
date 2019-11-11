@@ -14,7 +14,7 @@ public class ShapeCollector {
     public void removeFigure(Shape shape){}
 
     public int getFigure(int n){
-        return 20;
+        return 2;
     }
 
     public void showFigures(){};
