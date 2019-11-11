@@ -54,10 +54,9 @@ public class ShapeCollectorTestSuite {
         ArrayList<Shape> shapes = new ArrayList<>();
         shapes.add(circle);
         shapes.add(triangle);
-        ShapeCollector collectedShape = new ShapeCollector();
 
         //When
-        Shape result = collectedShape.shapes.get(0);
+        Shape result = shapes.get(0);
 
 
         //Then
