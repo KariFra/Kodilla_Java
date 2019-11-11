@@ -36,9 +36,8 @@ public class ShapeCollectorTestSuite {
     public void testRemoveFigure(){
         //Given
         Shape circle = new Circle("circle", 20.00);
-        ArrayList<Shape> shapes = new ArrayList<>();
-        shapes.add(circle);
         ShapeCollector collectedShape = new ShapeCollector();
+        collectedShape.addFigure(circle);
 
         //When
         boolean result = collectedShape.removeFigure(circle);
@@ -51,13 +50,12 @@ public class ShapeCollectorTestSuite {
         //Given
         Shape circle = new Circle("circle", 20.00);
         Shape triangle = new Triangle("triangle", 10.00);
-        ArrayList<Shape> shapes = new ArrayList<>();
-        shapes.add(circle);
-        shapes.add(triangle);
+        ShapeCollector collectedShape = new ShapeCollector();
+        collectedShape.addFigure(circle);
+        collectedShape.addFigure(triangle);
 
         //When
-        Shape result = shapes.get(0);
-
+        Shape result = collectedShape.getFigure(0);
 
         //Then
         Assert.assertEquals(circle,result);
