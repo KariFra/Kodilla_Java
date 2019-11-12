@@ -3,7 +3,7 @@ package com.kodilla.testing.shape;
 import java.lang.*;
 import java.util.*;
 
-import javafx.beans.binding.When;
+
 import org.junit.*;
 
 public class ShapeCollectorTestSuite {
