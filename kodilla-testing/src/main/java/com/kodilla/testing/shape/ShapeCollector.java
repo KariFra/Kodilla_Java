@@ -22,7 +22,7 @@ public class ShapeCollector {
                 shapes.remove(shape);
                 return true;
             }
-
+            return result;
         }
 
         public Shape getFigure (int n){
