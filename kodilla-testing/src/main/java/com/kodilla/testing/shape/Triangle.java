@@ -19,4 +19,8 @@ public class Triangle implements Shape {
     public double getField() {
         return field;
     }
+
+    public String toString(){
+        return String.format(getShapeName(), getField());
+    }
 }

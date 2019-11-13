@@ -32,9 +32,11 @@ public class ShapeCollector {
             return shape;
         }
 
-        public String showFigures (Shape shape) {
-           String result = shape.getShapeName();
-           return result;
+        public void showFigures () {
+            for (int i=0; i<shapes.size();i++) {
+                System.out.println(shapes.get(i));
+            }
+
         }
 
 

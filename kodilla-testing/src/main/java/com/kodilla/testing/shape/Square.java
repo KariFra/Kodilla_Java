@@ -20,4 +20,7 @@ public class Square implements Shape {
         return field;
     }
 
+    public String toString(){
+        return String.format(getShapeName(), getField());
+    }
 }
