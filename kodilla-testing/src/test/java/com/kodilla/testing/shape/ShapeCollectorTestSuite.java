@@ -60,6 +60,23 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(circle,result);
     }
+    @Test
+    public void showFigures() {
+        //Given
+        Shape circle = new Circle("circle", 20.00);
+        Shape triangle = new Triangle("triangle", 10.00);
+        Shape square = new Square("square", 10.00);
+        ShapeCollector collectedShape = new ShapeCollector();
+        collectedShape.addFigure(circle);
+        collectedShape.addFigure(triangle);
+        collectedShape.addFigure(square);
+
+        //When
+        boolean result = collectedShape.showFigures();
+
+        //Than
+        Assert.assertTrue(result);
+    }
 
 
 

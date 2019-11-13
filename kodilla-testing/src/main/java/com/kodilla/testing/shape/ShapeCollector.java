@@ -32,11 +32,19 @@ public class ShapeCollector {
             return shape;
         }
 
-        public void showFigures () {
-            for (int i=0; i<shapes.size();i++) {
-                System.out.println(shapes.get(i));
+        public boolean showFigures () {
+
+            boolean result = false;
+            int count = 0;
+            for(Shape shapeTaker:shapes) {
+                System.out.println(shapeTaker);
+                count++;
+                if (count == shapes.size()) {
+                     result = true;
+                }
             }
 
+           return result;
         }
 
 
