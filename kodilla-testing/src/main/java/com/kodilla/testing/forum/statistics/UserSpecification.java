@@ -16,12 +16,8 @@ public class UserSpecification{
 
     public UserSpecification(Statistics statistics) {
         this.statistics = statistics;
-        this.userNumber = userNumber;
-        this.postNumber = postNumber;
-        this.commentNumber = commentNumber;
+
     }
-
-
 
 
     public boolean calculateAdvStatistics(Statistics statistics) {
