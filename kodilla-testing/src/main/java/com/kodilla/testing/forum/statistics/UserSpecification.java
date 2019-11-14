@@ -35,8 +35,6 @@ public class UserSpecification{
         if(avPostPerUser*userNumber == commentNumber*avCommentPerPost){
             result = true;
         }
-
-
         return result;
     }
 }
