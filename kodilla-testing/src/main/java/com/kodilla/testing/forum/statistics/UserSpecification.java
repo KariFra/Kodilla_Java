@@ -22,7 +22,9 @@ public class UserSpecification{
     }
 
 
-    public boolean calculateAdvStatistics(Statistics statistics){
+
+
+    public boolean calculateAdvStatistics(Statistics statistics) {
         boolean result = false;
         List<String> usersNames = new ArrayList<String>();
         userNumber = statistics.usersNames().size();
@@ -38,7 +40,5 @@ public class UserSpecification{
         System.out.println(userNumber+postNumber +commentNumber +avPostPerUser +avCommentPerUser+avCommentPerPost);
 
         return result;
-
     }
-
 }

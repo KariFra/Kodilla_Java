@@ -33,11 +33,10 @@ public class ShapeCollector {
         }
 
         public String showFigures () {
-            int count = 0;
+
             String print = "";
             for (int i = 0;i<shapes.size();i++){
                 print = print+ " " +shapes.get(i).getShapeName();
-                count++;
             }
             System.out.println(print);
            return print;
