@@ -72,10 +72,10 @@ public class ShapeCollectorTestSuite {
         collectedShape.addFigure(square);
 
         //When
-        boolean result = collectedShape.showFigures();
+        String result = collectedShape.showFigures();
 
         //Than
-        Assert.assertTrue(result);
+        Assert.assertEquals(" circle triangle square",result);
     }
 
 
