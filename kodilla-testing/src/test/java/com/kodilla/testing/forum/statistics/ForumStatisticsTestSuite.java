@@ -17,9 +17,7 @@ public class ForumStatisticsTestSuite {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersNames = new ArrayList<String>();
-        statisticsMock.usersNames().add("Ela");
-        statisticsMock.usersNames().add("Hela");
-        statisticsMock.usersNames().add("Brunela");
+        usersNames.add("Ela");
         int postNumber = 3;
         int commentNumber = 4;
         when(statisticsMock.usersNames()).thenReturn(usersNames);
