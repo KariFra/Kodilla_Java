@@ -16,12 +16,10 @@ public class ForumStatisticsTestSuite {
    public void calculateAdvStatistics(){
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<String>();
-        usersNames.add("Ela");
-        int postNumber = 3;
-        int commentNumber = 4;
+        List<String> usersNames = new ArrayList<>(100);
+        int postNumber = 1000;
+        int commentNumber = 0;
         when(statisticsMock.usersNames()).thenReturn(usersNames);
-        when(statisticsMock.usersNames().size()).thenReturn(usersNames.size());
         when(statisticsMock.postsCount()).thenReturn(postNumber);
         when(statisticsMock.commentsCount()).thenReturn(commentNumber);
 

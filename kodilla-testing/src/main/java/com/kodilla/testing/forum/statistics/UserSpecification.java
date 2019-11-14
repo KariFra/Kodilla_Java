@@ -22,18 +22,20 @@ public class UserSpecification{
 
     public boolean calculateAdvStatistics(Statistics statistics) {
         boolean result = false;
-        List<String> usersNames = new ArrayList<String>();
         userNumber = statistics.usersNames().size();
         postNumber = statistics.postsCount();
         commentNumber = statistics.commentsCount();
+        while (userNumber != 0 && commentNumber != 0){
         avPostPerUser = postNumber/= userNumber;
         avCommentPerUser = commentNumber/= userNumber;
-        avCommentPerPost = postNumber/= commentNumber;
+        avCommentPerPost = postNumber/= commentNumber;}
+
+        System.out.println(userNumber+", "+postNumber+", " +commentNumber+", " +avPostPerUser+", " +avCommentPerUser+", "+avCommentPerPost);
+
         if(avPostPerUser*userNumber == commentNumber*avCommentPerPost){
             result = true;
         }
 
-        System.out.println(userNumber+postNumber +commentNumber +avPostPerUser +avCommentPerUser+avCommentPerPost);
 
         return result;
     }
