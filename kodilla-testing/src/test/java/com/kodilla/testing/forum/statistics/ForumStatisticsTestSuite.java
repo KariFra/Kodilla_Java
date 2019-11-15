@@ -16,8 +16,8 @@ public class ForumStatisticsTestSuite {
    public void calculateAdvStatistics(){
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<>(100);
-        int postNumber = 1000;
+        ArrayList<String> usersNames = new ArrayList<>(100);
+        int postNumber = 0;
         int commentNumber = 0;
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn(postNumber);
@@ -26,9 +26,9 @@ public class ForumStatisticsTestSuite {
         UserSpecification userSpecification = new UserSpecification(statisticsMock);
 
         //When
-        boolean result = userSpecification.calculateAdvStatistics(statisticsMock);
+        String result = userSpecification.calculateAdvStatistics(statisticsMock);
 
         //Than
-        Assert.assertTrue(result);
+        Assert.assertEquals("There are no users.",result);
     }
 }
