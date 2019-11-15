@@ -78,6 +78,6 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals("circle triangle square",result);
     }
 
-
-
 }
+
+
