@@ -17,7 +17,6 @@ public class ForumStatisticsTestSuite {
             user.add("User");
         }
         return user;
-
     }
 
     @Test
