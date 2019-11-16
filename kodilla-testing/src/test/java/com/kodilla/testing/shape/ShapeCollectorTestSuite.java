@@ -75,7 +75,7 @@ public class ShapeCollectorTestSuite {
         String result = collectedShape.showFigures();
 
         //Than
-        Assert.assertEquals("circle triangle square",result);
+        Assert.assertEquals("circle triangle square ",result);
     }
 
 }
