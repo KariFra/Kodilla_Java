@@ -43,7 +43,7 @@ public class UserSpecification{
         if(postNumber == 0 && commentNumber != 0 && userNumber != 0){
             avCommentPerUser = commentNumber/userNumber;
             result = userNumber+", "+ commentNumber+", "+avCommentPerUser;
-            System.out.println( "There are "+userNumber+"and "+commentNumber+"comments but there are no posts. The avarage comment per user equals:"+avCommentPerUser);
+            System.out.println( "There are "+userNumber+" users and "+commentNumber+" comments but there are no posts. The avarage comment per user equals: "+avCommentPerUser);
         }
         if(postNumber == 0 && commentNumber == 0 && userNumber != 0){
             result =""+userNumber;
