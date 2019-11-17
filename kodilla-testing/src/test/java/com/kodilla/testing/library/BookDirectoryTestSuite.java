@@ -109,8 +109,8 @@ public class BookDirectoryTestSuite {
         List<Book> user3List = booklibrary.listBooksInHandsOf(libraryUser3);
 
         //Than
-        assertEquals(0, resultListOf0BorrowedBooks.size());
-        assertEquals(1, resultListOf1BorrowedBook.size());
-        assertEquals(5, resultListOf5BorrowedBooks.size());
+        assertEquals(0, user1List.size());
+        assertEquals(1, user2List.size());
+        assertEquals(5, user3List.size());
     }
 }
