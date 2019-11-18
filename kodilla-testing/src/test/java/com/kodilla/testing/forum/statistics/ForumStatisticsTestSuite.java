@@ -33,10 +33,10 @@ public class ForumStatisticsTestSuite {
         UserSpecification userSpecification = new UserSpecification(statisticsMock);
 
         //When
-        String result = userSpecification.calculateAdvStatistics(statisticsMock);
+        userSpecification.calculateAdvStatistics(statisticsMock);
 
         //Than
-        Assert.assertEquals("100, 1000, 10.0",result);
+        Assert.assertEquals(userSpecification.getUserNumber(), 100);
     }
     @Test
     public void calculateAdvStatisticsNoUser(){

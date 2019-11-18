@@ -19,6 +19,33 @@ public class UserSpecification{
 
     }
 
+    public Statistics getStatistics() {
+        return statistics;
+    }
+
+    public int getUserNumber() {
+        return userNumber;
+    }
+
+    public int getPostNumber() {
+        return postNumber;
+    }
+
+    public int getCommentNumber() {
+        return commentNumber;
+    }
+
+    public double getAvPostPerUser() {
+        return avPostPerUser;
+    }
+
+    public double getAvCommentPerUser() {
+        return avCommentPerUser;
+    }
+
+    public double getAvCommentPerPost() {
+        return avCommentPerPost;
+    }
 
     public String calculateAdvStatistics(Statistics statistics) {
         String result = "";
@@ -37,8 +64,8 @@ public class UserSpecification{
         }
         if(commentNumber == 0 && postNumber != 0 && userNumber != 0){
             avPostPerUser = postNumber/userNumber;
-            result = userNumber+", "+ postNumber+", "+avPostPerUser;
-            System.out.println("There are "+userNumber+"and "+postNumber+"posts but there are no comments. The avarage post per user equals:"+avPostPerUser);
+            result = getUserNumber()+", "+ getPostNumber()+", "+ getAvPostPerUser();
+            System.out.println("There are "+userNumber+" users and "+postNumber+" posts but there are no comments. The avarage post per user equals:"+avPostPerUser);
         }
         if(postNumber == 0 && commentNumber != 0 && userNumber != 0){
             avCommentPerUser = commentNumber/userNumber;
