@@ -36,7 +36,7 @@ public class ForumStatisticsTestSuite {
         String result = userSpecification.calculateAdvStatistics(statisticsMock);
 
         //Than
-        Assert.assertEquals("100, 1000, 5, 1.0, 0.0, 200.0",result);
+        Assert.assertEquals("100, 1000, 10.0",result);
     }
     @Test
     public void calculateAdvStatisticsNoUser(){
