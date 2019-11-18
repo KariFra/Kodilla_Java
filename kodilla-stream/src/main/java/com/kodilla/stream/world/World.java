@@ -11,7 +11,7 @@ public class World {
     public final List<Continent> continents = new ArrayList<>();
 
     public void  addContinents(List<Continent> continents) {
-        continents.addAll(continents);
+        this.continents.addAll(continents);
     }
 
 
