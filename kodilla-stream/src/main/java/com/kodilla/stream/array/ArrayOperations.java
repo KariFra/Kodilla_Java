@@ -11,6 +11,7 @@ public interface ArrayOperations {
         IntStream.range(0,numbers.length )
                 .forEach(System.out::println);
         OptionalDouble average = IntStream.range(0,numbers.length )
+                .map(n -> numbers[n])
                 .average();
         return average;
     }

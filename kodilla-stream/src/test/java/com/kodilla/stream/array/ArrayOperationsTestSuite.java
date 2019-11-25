@@ -24,8 +24,19 @@ public class ArrayOperationsTestSuite {
         //Than
         Assert.assertEquals(9.50,average.getAsDouble(),0.01);
 
+    }
+    @Test
+    public void getAverageTestSecond(){
+        //Given
+        int[] numbers = new int[3];
+        numbers[0]=2;
+        numbers[1]=2;
+        numbers[2]=2;
+        //When
+        OptionalDouble average = ArrayOperations.getAverage(numbers);
 
-
+        //Than
+        Assert.assertEquals(2.00,average.getAsDouble(),0.01);
 
 
     }
