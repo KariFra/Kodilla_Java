@@ -141,9 +141,11 @@ public class BoardTestSuite {
         allTasks.add(new TaskList("In progress"));
         OptionalDouble averageDaysOfTasks = project.getTaskLists().stream()
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToLong(t -> ChronoUnit.DAYS.between(Instant.from(t.getDeadline()), Instant.from(t.getCreated())))
+                .mapToLong(t -> ChronoUnit.DAYS.between(t.getCreated(), t.getDeadline()))
                 .average();
 
+        //Than
+        Assert.assertEquals(25.5, averageDaysOfTasks.getAsDouble(),0.01);
 
     }
     }
