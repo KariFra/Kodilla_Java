@@ -8,7 +8,7 @@ public interface ArrayOperations {
 
 
     static OptionalDouble getAverage(int[] numbers) {
-        IntStream.range(0,numbers.length )
+        IntStream.rangeClosed(0,numbers[numbers.length-1] )
                 .forEach(System.out::println);
         OptionalDouble average = IntStream.range(0,numbers.length )
                 .map(n -> numbers[n])
