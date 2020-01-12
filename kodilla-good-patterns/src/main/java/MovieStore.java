@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MovieStore {
     public Map<String, List<String>> getMovies(){
@@ -30,16 +31,11 @@ public class MovieStore {
     public static void main(String[] args) {
         MovieStore moviePrintout = new MovieStore();
         Map<String, List<String>> booksTitlesWithTranslations = moviePrintout.getMovies();
-        int i = 0;
-        String printout="";
 
-        for(Map.Entry<String, List<String>> listEntry : booksTitlesWithTranslations.entrySet()){
-            for(String translationName : listEntry.getValue()){
-                printout = printout +"!" + translationName;
-            }
-        }
-
-        System.out.println(printout);
+        booksTitlesWithTranslations.entrySet().stream()
+                .flatMap(l -> l.getValue().stream())
+                .map(e -> "!"+ e)
+                .forEach(System.out::print);
 
     }
 }
