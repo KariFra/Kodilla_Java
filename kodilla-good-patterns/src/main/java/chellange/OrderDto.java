@@ -1,3 +1,5 @@
+package chellange;
+
 public class OrderDto {
 
     public User user;

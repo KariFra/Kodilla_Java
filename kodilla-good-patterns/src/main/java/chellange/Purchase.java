@@ -1,3 +1,5 @@
+package chellange;
+
 public class Purchase {
 
     String characteristic;

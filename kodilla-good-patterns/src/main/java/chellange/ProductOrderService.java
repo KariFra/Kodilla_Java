@@ -1,3 +1,5 @@
+package chellange;
+
 public class ProductOrderService {
 
     private InformationService informationService;
@@ -13,7 +15,7 @@ public class ProductOrderService {
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isOrdered = orderService.rent(orderRequest.getUser(), orderRequest.getPurchase(),
+        boolean isOrdered = orderService.sell(orderRequest.getUser(), orderRequest.getPurchase(),
                 orderRequest.getWhen());
 
         if (isOrdered) {
