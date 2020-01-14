@@ -6,9 +6,7 @@ public class ProductOrderService {
     private OrderService orderService;
     private OrderRepository orderRepository;
 
-    public ProductOrderService(final InformationService informationService,
-                          final OrderService orderService,
-                          final OrderRepository orderRepository) {
+    public ProductOrderService(InformationService informationService, OrderService orderService, OrderRepository orderRepository) {
         this.informationService = informationService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;
@@ -23,7 +21,9 @@ public class ProductOrderService {
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getPurchase(), orderRequest.getWhen());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
+            System.out.println("Oops. Something went wrong. Purchase was not processed");
             return new OrderDto(orderRequest.getUser(), false);
+
         }
     }
 }
