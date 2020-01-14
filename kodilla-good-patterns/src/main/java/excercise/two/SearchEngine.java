@@ -8,7 +8,7 @@ public class SearchEngine {
 
         Scanner scanner = new Scanner(System.in);
         CommunicationWithCustomer communicationWithCustomer = new CommunicationWithCustomer();
-        communicationWithCustomer.printOutBeggining();
+        communicationWithCustomer.startSearch();
         communicationWithCustomer.printOutArrival(scanner);
         communicationWithCustomer.printOutDaparture(scanner);
         communicationWithCustomer.printOutChanges(scanner);

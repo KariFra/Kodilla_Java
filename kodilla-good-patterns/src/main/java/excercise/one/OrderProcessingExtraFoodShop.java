@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 
 public class OrderProcessingExtraFoodShop implements OrderProcessing {
 
-
-
     public boolean informTheMagazine(OrderRequest orderRequest){
         Product product = orderRequest.getProduct();
         LocalDateTime deliveryTime = orderRequest.getRequestedDelivery();

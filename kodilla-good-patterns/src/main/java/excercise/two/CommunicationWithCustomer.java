@@ -7,9 +7,10 @@ public class CommunicationWithCustomer {
 
     CityCheck cityCheck = new CityCheck();
 
-    public void printOutBeggining(){
+    public void startSearch(){
         System.out.println("Please choose from below list of cities in your search:");
         System.out.println(Arrays.toString(City.values()));
+        cityCheck.prepareSearchList();
     }
 
     public void printOutDaparture(Scanner scanner){
@@ -28,6 +29,6 @@ public class CommunicationWithCustomer {
         System.out.println("Find the route with change in chosen city:");
         String customerInputChange = scanner.nextLine();
         City.valueOf(customerInputChange);
-        System.out.println(cityCheck.checkerOfExistingChanges(City.valueOf(customerInputChange)));
+        cityCheck.checkerOfExistingChanges(City.valueOf(customerInputChange));
     }
 }
