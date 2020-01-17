@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Arrays;
-import java.util.List;
 
 public class BoardTestSuite {
     @Test
@@ -21,8 +19,8 @@ public class BoardTestSuite {
         board.toDoList.getTasks().add("Task3");
 
         //Then
-//        Assert.assertEquals("Task1",board.doneList.getTasks().toString());
-//        Assert.assertEquals("Task2",board.inProgressList.getTasks().toString());
-//        Assert.assertEquals("Task3",board.toDoList.getTasks().toString());
+        Assert.assertEquals("[Task1]",board.doneList.getTasks().toString());
+        Assert.assertEquals("[Task2]",board.inProgressList.getTasks().toString());
+        Assert.assertEquals("[Task3]",board.toDoList.getTasks().toString());
     }
 }
