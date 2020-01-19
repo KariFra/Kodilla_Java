@@ -1,5 +1,6 @@
 package com.kodilla.patterns.prototype.library;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -38,6 +39,9 @@ public class LibraryTestSuite {
         System.out.println(library);
         System.out.println(clonedLibrary);
         System.out.println(deepClonedLibrary);
+        Assert.assertEquals(4,library.getBooks().size());
+        Assert.assertEquals(4,clonedLibrary.getBooks().size());
+        Assert.assertEquals(3,deepClonedLibrary.getBooks().size());
 
     }
 
