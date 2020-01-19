@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.stream.IntStream;
 
 public class LibraryTestSuite {
     @Test
@@ -36,9 +35,6 @@ public class LibraryTestSuite {
         library.getBooks().add(new Book("Tulips", "Mary Grey", LocalDate.of(2001, 12, 31)));
 
         //Then
-        System.out.println(library);
-        System.out.println(clonedLibrary);
-        System.out.println(deepClonedLibrary);
         Assert.assertEquals(4,library.getBooks().size());
         Assert.assertEquals(4,clonedLibrary.getBooks().size());
         Assert.assertEquals(3,deepClonedLibrary.getBooks().size());
