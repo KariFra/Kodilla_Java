@@ -28,10 +28,10 @@ public class UserTestSuite {
         User jessica = new Millenials("Jessica Mordeczka");
 
         //When
-        jessica.setSocialPublisher( new FacebookPublisher());
+        jessica.setSocialPublisher( new TwitterPublisher());
         String millenialsPosts = jessica.sharePost();
 
         //Then
-        Assert.assertEquals("Facebook",millenialsPosts);
+        Assert.assertEquals("Twitter",millenialsPosts);
     }
 }
