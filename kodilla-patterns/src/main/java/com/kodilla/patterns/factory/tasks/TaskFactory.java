@@ -1,9 +1,7 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class TaskFactory {
-//    public static final String PAINTING = "PAINTING";
-//    public static final String SHOPPING = "SHOPPING";
-//    public static final String DRIVING = "DRIVING";
+
 
     enum PossibleTasks { PAINTING(false ),SHOPPING(false),DRIVING(false);
 
