@@ -29,6 +29,6 @@ public class CommunicationWithCustomer {
         System.out.println("Find the route with change in chosen city:");
         String customerInputChange = scanner.nextLine();
         City.valueOf(customerInputChange);
-        cityCheck.checkerOfExistingChanges(City.valueOf(customerInputChange));
+        cityCheck.checkExistingChanges(City.valueOf(customerInputChange));
     }
 }

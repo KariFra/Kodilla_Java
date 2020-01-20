@@ -23,10 +23,8 @@ public class CityCheck {
                 .collect(Collectors.toList());
         if (possibleArrivals.size() == 0) {
             System.out.println("There are no flights to the city you have chosen.");
-            return possibleArrivals;
-        } else {
-            return possibleArrivals;
         }
+        return possibleArrivals;
     }
 
     public List<Flight> findPossibleDepartures(City customerInputDeparture){
@@ -35,23 +33,18 @@ public class CityCheck {
                 .collect(Collectors.toList());
         if (possibleDepartures.size() == 0) {
             System.out.println("There are no flights from the city you have chosen.");
-            return possibleDepartures;
-        } else {
-            return possibleDepartures;
         }
+            return possibleDepartures;
     }
 
-    public void checkerOfExistingChanges(City customerInputChange){
+    public void checkExistingChanges(City customerInputChange){
         if(customerInputChange.equals(City.KRAKOW) || customerInputChange.equals(City.WARSAW)){
             timetable.stream()
                     .filter(f -> f.cityForChange.equals(customerInputChange))
                     .forEach(System.out::println);
         } else {
             System.out.println("There are no changes in this city."+ new ArrayList<>());
-
-
         }
-
     }
 
 
