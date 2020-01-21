@@ -4,14 +4,14 @@ public class DrivingTask implements Task {
     String taskName;
     String where;
     String using;
+    boolean isExecuted;
 
 
-
-    public DrivingTask(String taskName, String where, String using) {
+    public DrivingTask(String taskName, String where, String using, boolean isExecuted) {
         this.taskName = taskName;
         this.where = where;
         this.using = using;
-
+        this.isExecuted = isExecuted;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class DrivingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        if (TaskFactory.doneDrivingTasks.get(0).taskName == "Take dog to vet") {
+        if (isExecuted){
             return true;
         }
         return false;

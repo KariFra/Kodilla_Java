@@ -4,13 +4,14 @@ public class PaintingTask implements Task {
     String taskName;
     String color;
     String whatToPaint;
+    boolean isExecuted;
 
 
-    public PaintingTask(String taskName, String color, String whatToPaint) {
+    public PaintingTask(String taskName, String color, String whatToPaint, boolean isExecuted) {
         this.taskName = taskName;
         this.color = color;
         this.whatToPaint = whatToPaint;
-
+        this.isExecuted = isExecuted;
     }
 
     @Override
@@ -26,7 +27,7 @@ public class PaintingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        if (TaskFactory.donePaintingTasks.get(0).taskName == "Home makeover") {
+        if (isExecuted){
             return true;
         }
         return false;
