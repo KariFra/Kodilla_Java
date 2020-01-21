@@ -7,7 +7,6 @@ public class FirstChallenge {
 
         return a / b; }
 
-
     /**
      * This main can throw an ArithmeticException!!!
      * @param args

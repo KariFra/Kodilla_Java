@@ -1,6 +1,5 @@
 package com.kodilla.exception.test;
 
-import java.io.IOException;
 
 public class SecondChallenge {
     public String probablyIWillThrowException(double x, double y) throws Exception {
