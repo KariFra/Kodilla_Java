@@ -5,18 +5,19 @@ public class DrivingTask implements Task {
     String where;
     String using;
 
+
+
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
         this.where = where;
         this.using = using;
+
     }
 
     @Override
     public void executeTask() {
         System.out.println("Your dog is healthy.");
-        if (TaskFactory.PossibleTasks.DRIVING.wasDone) {
-            isTaskExecuted();
-        }
+        isTaskExecuted();
     }
 
     @Override
@@ -26,6 +27,9 @@ public class DrivingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return true;
+        if (TaskFactory.doneDrivingTasks.get(0).taskName == "Take dog to vet") {
+            return true;
+        }
+        return false;
     }
 }

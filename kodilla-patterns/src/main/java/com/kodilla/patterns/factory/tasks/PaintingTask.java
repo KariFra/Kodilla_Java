@@ -5,18 +5,18 @@ public class PaintingTask implements Task {
     String color;
     String whatToPaint;
 
+
     public PaintingTask(String taskName, String color, String whatToPaint) {
         this.taskName = taskName;
         this.color = color;
         this.whatToPaint = whatToPaint;
+
     }
 
     @Override
     public void executeTask() {
         System.out.println("The walls look like green peas.");
-        if (TaskFactory.PossibleTasks.PAINTING.wasDone) {
-            isTaskExecuted();
-        }
+        isTaskExecuted();
     }
 
     @Override
@@ -26,6 +26,9 @@ public class PaintingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return true;
+        if (TaskFactory.donePaintingTasks.get(0).taskName == "Home makeover") {
+            return true;
+        }
+        return false;
     }
 }

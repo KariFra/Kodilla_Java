@@ -5,18 +5,19 @@ public class ShoppingTask implements Task {
     String whatToBuy;
     double quantity;
 
+
+
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
         this.whatToBuy = whatToBuy;
         this.quantity = quantity;
+
     }
 
     @Override
     public void executeTask() {
         System.out.println("Shopping was done");
-        if (TaskFactory.PossibleTasks.SHOPPING.wasDone) {
-            isTaskExecuted();
-        }
+        isTaskExecuted();
     }
 
     @Override
@@ -26,6 +27,9 @@ public class ShoppingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return true;
+        if (TaskFactory.doneShoppingTasks.get(0).taskName == "Weekend shopping") {
+            return true;
+        }
+        return false;
     }
 }

@@ -10,7 +10,7 @@ public class TaskFactoryTestSuite {
         TaskFactory taskFactory = new TaskFactory();
 
         //When
-        Task task = taskFactory.taskTracker(TaskFactory.PossibleTasks.PAINTING);
+        Task task = taskFactory.taskTracker(TaskFactory.PAINTING);
 
         //Then
         Assert.assertEquals("Home makeover",task.getTaskName());
@@ -23,7 +23,7 @@ public class TaskFactoryTestSuite {
         TaskFactory taskFactory = new TaskFactory();
 
         //When
-        Task task = taskFactory.taskTracker(TaskFactory.PossibleTasks.SHOPPING);
+        Task task = taskFactory.taskTracker(TaskFactory.SHOPPING);
 
         //Then
         Assert.assertEquals("Weekend shopping",task.getTaskName());
@@ -35,7 +35,7 @@ public class TaskFactoryTestSuite {
         TaskFactory taskFactory = new TaskFactory();
 
         //When
-        Task task = taskFactory.taskTracker(TaskFactory.PossibleTasks.DRIVING);
+        Task task = taskFactory.taskTracker(TaskFactory.DRIVING);
 
         //Then
         Assert.assertEquals("Take dog to vet",task.getTaskName());
