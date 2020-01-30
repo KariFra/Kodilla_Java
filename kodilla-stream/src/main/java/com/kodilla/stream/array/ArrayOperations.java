@@ -16,4 +16,5 @@ public interface ArrayOperations {
                 .average();
         return average;
     }
+
 }
