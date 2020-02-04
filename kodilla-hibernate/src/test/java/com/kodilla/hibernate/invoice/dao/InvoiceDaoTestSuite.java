@@ -10,14 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class InvoiceDaoTestSuite {
     @Autowired
     InvoiceDao invoiceDao;
-    ProductDao productDao;
 
     @Test
     public void testInvoiceDaoSave(){
@@ -39,17 +40,15 @@ public class InvoiceDaoTestSuite {
         //When
         invoiceDao.save(invoice);
         int invoiceId = invoice.getId();
-        productDao.save(product);
-        int productId = product.getId();
 
 
         //Than
         Assert.assertNotEquals(0,invoiceId);
-        Assert.assertNotEquals(0,productId);
+
 
         //Clean
         invoiceDao.deleteById(invoiceId);
-        productDao.deleteById(productId);
+
 
     }
 }
