@@ -12,5 +12,5 @@ import java.util.List;
 @Transactional
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
-List<Employee> findEmployeeWithGivenSurname(@Param("LAST_NAME") String lastName);
+List<Employee> findEmployeeWithGivenSurname(@Param("LASTNAME") String lastname);
 }

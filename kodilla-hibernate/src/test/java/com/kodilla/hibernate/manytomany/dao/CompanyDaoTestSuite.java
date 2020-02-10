@@ -26,35 +26,35 @@ public class CompanyDaoTestSuite {
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
+        Company softweareMachine = new Company("Software Machine");
+        Company dataMasters = new Company("Data Masters");
         Company greyMatter = new Company("Grey Matter");
 
-        softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarckson);
-        dataMaesters.getEmployees().add(lindaKovalsky);
+        softweareMachine.getEmployees().add(johnSmith);
+        dataMasters.getEmployees().add(stephanieClarckson);
+        dataMasters.getEmployees().add(lindaKovalsky);
         greyMatter.getEmployees().add(johnSmith);
         greyMatter.getEmployees().add(lindaKovalsky);
 
-        johnSmith.getCompanies().add(softwareMachine);
+        johnSmith.getCompanies().add(softweareMachine);
         johnSmith.getCompanies().add(greyMatter);
-        stephanieClarckson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(dataMaesters);
+        stephanieClarckson.getCompanies().add(dataMasters);
+        lindaKovalsky.getCompanies().add(dataMasters);
         lindaKovalsky.getCompanies().add(greyMatter);
 
         //When
-        companyDao.save(softwareMachine);
-        int softwareMachineId = softwareMachine.getId();
-        companyDao.save(dataMaesters);
-        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(softweareMachine);
+        int softwareMachineId = softweareMachine.getId();
+        companyDao.save(dataMasters);
+        int dataMastersId = dataMasters.getId();
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
-        List<Employee> employeeWithGivenSurname = employeeDao.findEmployeeWithGivenSurname("Kov");
+        List<Employee> employeeWithGivenSurname = employeeDao.findEmployeeWithGivenSurname("Kovalsky");
         List<Company> nameStartWithThreeLetters = companyDao.findCompaniesNameStartWithThreeLetters("Sof");
 
         //Then
         Assert.assertNotEquals(0, softwareMachineId);
-        Assert.assertNotEquals(0, dataMaestersId);
+        Assert.assertNotEquals(0, dataMastersId);
         Assert.assertNotEquals(0, greyMatterId);
         Assert.assertEquals(1,employeeWithGivenSurname.size());
         Assert.assertEquals(1,nameStartWithThreeLetters.size());
@@ -62,7 +62,7 @@ public class CompanyDaoTestSuite {
         //CleanUp
         try {
             companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(dataMastersId);
             companyDao.deleteById(greyMatterId);
         } catch (Exception e) {
             //do nothing
