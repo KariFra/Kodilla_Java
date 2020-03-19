@@ -14,6 +14,6 @@ public class CheeseDecorator extends AbstractPizzaOrderDecorator {
 
     @Override
     public String getIngredients(){
-        return super.getIngredients() + "mozarella";
+        return super.getIngredients() + " mozarella";
     }
 }

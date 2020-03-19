@@ -10,6 +10,6 @@ public class BasicPizzaOrder implements PizzaOrder {
 
     @Override
     public String getIngredients() {
-        return "You have chosen following ingredients on your pizza: ";
+        return "You have chosen following ingredients on your pizza:";
     }
 }
