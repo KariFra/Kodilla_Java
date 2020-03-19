@@ -36,23 +36,23 @@ public class TaskDaoTestSuite {
         //CleanUp
         taskDao.deleteById(id);
     }
-//    @Test
-//    public void testTaskDaoFindByDuration() {
-//        //Given
-//        Task task = new Task(DESCRIPTION, 7);
-//        taskDao.save(task);
-//        int duration = task.getDuration();
-//
-//        //When
-//        List<Task> readTasks = taskDao.findByDuration(duration);
-//
-//        //Then
-//        Assert.assertEquals(4, readTasks.size());
-//
-//        //CleanUp
-//        int id = readTasks.get(0).getId();
-//        taskDao.deleteById(id);
-//    }
+    @Test
+    public void testTaskDaoFindByDuration() {
+        //Given
+        Task task = new Task(DESCRIPTION, 7);
+        taskDao.save(task);
+        int duration = task.getDuration();
+
+        //When
+        List<Task> readTasks = taskDao.findByDuration(duration);
+
+        //Then
+        Assert.assertTrue(readTasks.size()>0);
+
+        //CleanUp
+        int id = readTasks.get(0).getId();
+        taskDao.deleteById(id);
+    }
     @Test
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
