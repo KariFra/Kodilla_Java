@@ -3,8 +3,8 @@ package com.kodilla.patterns2.observer.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExcercisesToCheck implements VisibleContent {
-    private final List<Notifier> notifications;
+public class ExcercisesToCheck implements ObservableExercises {
+    private final List<ObserverNotify> notifications;
     private final List<String> exercises;
     private final String module;
 
@@ -27,15 +27,15 @@ public class ExcercisesToCheck implements VisibleContent {
         notifyMentor();
     }
     @Override
-    public void assignStudent(Notifier notification) {
+    public void assignStudent(ObserverNotify notification) {
         notifications.add(notification);
 
     }
 
     @Override
     public void notifyMentor() {
-        for (Notifier notifier : notifications) {
-            notifier.notify(this);
+        for (ObserverNotify observerNotify : notifications) {
+            observerNotify.notify(this);
         }
     }
 }
