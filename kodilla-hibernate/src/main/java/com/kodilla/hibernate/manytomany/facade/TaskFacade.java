@@ -23,7 +23,7 @@ public final class TaskFacade {
     @Autowired
     private EmployeeDao employeeDao;
 
-    public List<Employee>processSearchEmployee(final String employeeNameFrag) throws SearchException{
+    public List<Employee> processSearchEmployee(final String employeeNameFrag) throws SearchException{
 
         List<Employee> employee = employeeDao.findEmployeeWithGivenSurname(employeeNameFrag);
         LOGGER.info(employee+" is the employee you are looking for.");
@@ -34,7 +34,7 @@ public final class TaskFacade {
         }
        return employee;
     }
-    public List<Company>  processSearchCompany(final String companyNameFrag) throws SearchException{
+    public List<Company> processSearchCompany(final String companyNameFrag) throws SearchException{
 
         List<Company> name = companyDao.findCompaniesNameStartWithThreeLetters(companyNameFrag);
         LOGGER.info("The company you are looking for is called: " + name);

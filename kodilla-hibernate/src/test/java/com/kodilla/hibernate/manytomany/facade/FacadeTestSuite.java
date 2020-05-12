@@ -7,7 +7,6 @@ import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,8 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -28,6 +29,9 @@ public class FacadeTestSuite {
 
     @Autowired
     EmployeeDao employeeDao;
+
+    @Autowired
+    TaskFacade facade;
 
     @Before
     public void createObjects(){
@@ -41,38 +45,38 @@ public class FacadeTestSuite {
 
     //jak test nie rzuci bledu bedzie fail
     @Test(expected = SearchException.class)
-    public void shouldThrowError(){
+    public void shouldThrowError() throws SearchException {
         //When
-       List<Company> companies = companyDao.findCompaniesNameStartWithThreeLetters("bro");
+       List<Company> companies = facade.processSearchCompany("bro");
 
        //Than
         assertEquals(0,companies.size());
 
     }
     @Test
-    public void shouldFindCompany(){
+    public void shouldFindCompany() throws SearchException {
         //When
-        List<Company> companies = companyDao.findCompaniesNameStartWithThreeLetters("App");
+        List<Company> companies = facade.processSearchCompany("App");
 
         //Than
-        assertEquals(1,companies.size());
+        assertTrue(companies.get(0).getName().equals("Apple"));
 
     }
 
     @Test
-    public void shouldFindEmployee(){
+    public void shouldFindEmployee() throws SearchException {
         //When
-        List<Employee> employees = employeeDao.findEmployeeWithGivenSurname("Black");
+        List<Employee> employees = facade.processSearchEmployee("Black");
 
         //Than
-        assertEquals(1,employees.size());
+        assertTrue(employees.get(0).getLastname().equals("Black"));
 
     }
 
     @Test(expected = SearchException.class)
-    public void shouldThrowErrorEmployee(){
+    public void shouldThrowErrorEmployee() throws SearchException {
         //When
-        List<Employee> employees = employeeDao.findEmployeeWithGivenSurname("Cucambersnatch");
+        List<Employee> employees = facade.processSearchEmployee("Cucambersnatch");
 
         //Than
         assertEquals(0,employees.size());

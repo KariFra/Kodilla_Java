@@ -62,7 +62,6 @@ public class CrudAppTestSuite {
              WebElement buttonCreateCard = theForm.findElement(By.xpath(".//button[contains(@class,\"card-creation\")]"));
              buttonCreateCard.click();
              });
-
      Thread.sleep(5000);
     }
 
@@ -95,7 +94,6 @@ public class CrudAppTestSuite {
                 .collect(Collectors.toList())
                 .size() > 0;
 
-
         driverTrello.close();
 
            return result;
@@ -115,7 +113,6 @@ public class CrudAppTestSuite {
                     WebElement deleteButton = driver.findElement(By.xpath(".//button[@data-task-delete-button=\"\"]"));
                     deleteButton.click();
                 });
-
     }
 
     @After
