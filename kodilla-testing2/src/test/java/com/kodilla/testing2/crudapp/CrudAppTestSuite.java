@@ -80,7 +80,7 @@ public class CrudAppTestSuite {
         driverTrello.findElement(By.id("password")).sendKeys(System.getenv("TRELLO_PASSWORD"));
         driverTrello.findElement(By.id("login-submit")).submit();
 
-        Thread.sleep(14000);
+        Thread.sleep(15000);
 
         driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
                 .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Kodilla Application\"]"))
@@ -99,20 +99,23 @@ public class CrudAppTestSuite {
            return result;
     }
 
+    private void shouldDeleteTask(String taskName) throws InterruptedException {
+        driver.switchTo().alert().accept();
+        driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
+                .filter(anyForm -> anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]")).getText().equals(taskName))
+                .forEach(filteredForm -> {
+                    WebElement deleteButton = driver.findElement(By.xpath(".//button[@data-task-delete-button=\"\"]"));
+                    deleteButton.click();
+                });
+        Thread.sleep(3000);
+    }
+
     @Test
     public void shouldCreateTrelloCard() throws InterruptedException {
     String taskName = createCrudAppTask();
     shouldSendTrelloCard(taskName);
     assertTrue(checkTaskExistsInTrello(taskName));
-
-        driver.switchTo().alert().accept();
-        driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
-                .filter(anyForm -> anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
-                        .getText().equals(taskName))
-                .forEach(form -> {
-                    WebElement deleteButton = driver.findElement(By.xpath(".//button[@data-task-delete-button=\"\"]"));
-                    deleteButton.click();
-                });
+    shouldDeleteTask(taskName);
     }
 
     @After

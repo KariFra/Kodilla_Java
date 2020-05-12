@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -43,7 +43,7 @@ public class FacadeTestSuite {
         employeeDao.save(jackBlack);
     }
 
-    //jak test nie rzuci bledu bedzie fail
+
     @Test(expected = SearchException.class)
     public void shouldThrowError() throws SearchException {
         //When
