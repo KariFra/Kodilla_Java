@@ -54,7 +54,7 @@ public class CrudAppTestSuite {
 
         WebElement button = driver.findElement(By.xpath(ADD_BUTTON_XPATH));
         button.click();
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         return taskName;
     }
 
@@ -75,7 +75,7 @@ public class CrudAppTestSuite {
                     WebElement buttonCreateCard = theForm.findElement(By.xpath(".//button[contains(@class,\"card-creation\")]"));
                     buttonCreateCard.click();
                 });
-        Thread.sleep(5000);
+        Thread.sleep(6000);
     }
 
 
@@ -88,19 +88,19 @@ public class CrudAppTestSuite {
         driverTrello.findElement(By.id("user")).sendKeys(System.getenv("TRELLO_USER"));
         driverTrello.findElement(By.id("login")).submit();
 
-        Thread.sleep(5000);
+        Thread.sleep(6000);
 
         driverTrello.findElement(By.id("password")).sendKeys(System.getenv("TRELLO_PASSWORD"));
         driverTrello.findElement(By.id("login-submit")).submit();
 
-        Thread.sleep(15000);
+        Thread.sleep(25000);
 
         driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
                 .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Kodilla Application\"]"))
                         .size()>0)
                 .forEach(aHref -> aHref.click());
 
-        Thread.sleep(3000);
+        Thread.sleep(6000);
 
         result = driverTrello.findElements(By.xpath("//span")).stream()
                 .filter(theSpan -> theSpan.getText().contains(taskName))
@@ -117,7 +117,7 @@ public class CrudAppTestSuite {
         driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
                 .filter(anyForm -> anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]")).getText().equals(taskName))
                 .forEach(filteredForm -> {
-                    WebElement deleteButton = driver.findElement(By.xpath(".//button[@data-task-delete-button=\"\"]"));
+                    WebElement deleteButton = filteredForm.findElement(By.xpath(".//button[@data-task-delete-button=\"\"]"));
                     deleteButton.click();
                 });
         Thread.sleep(3000);
